@@ -1,0 +1,23 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // Public read-only access for verified ledger pipelines
+    match /cases/{caseId} {
+      allow read: if true;
+      allow write: if request.auth != null && request.auth.token.admin == true;
+    }
+    
+    // Tight security protocol isolating the administrative control log
+    match /admin_panel/{document} {
+      allow read, write: if request.auth != null && request.auth.token.admin == true;
+    }
+  }
+}
+coreLedger	[{"id":"AC-43204","location":"Jamhuri ","category":"Roadway Asset Maintenance","description":"There are portholes on roads that were recently built","status":"🔴 Pending Action","date":"25/06/2026"...
+ac_session	{"id":"usr_1786726890746","name":"Travis","email":"traviskimutaig@gmail.com"}
+ac_users	[{"id":"usr_1785563479841","name":"Travis Kimutai","email":"traviskimutai2@gmail.com","password":"h_khdrgr","joined":"01/08/2026","role":"citizen"},{"id":"usr_1786726890746","name":"Travis","email"...
+ts_lang	sw
+ts_doc	Dxfhvxxz
+ts_bg	ocean
+ts_music	

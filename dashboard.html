@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Tracker | Accountability to the Core</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="inject-global-header"></div>
+    <main class="flex-grow-content">
+        <section class="topic-header-banner">
+            <div class="container">
+                <p class="eyebrow reveal">National Ledger</p>
+                <h2 class="reveal">Live Case Tracker</h2>
+                <p class="reveal">Active dossiers undergoing citizen verification. Citizen-submitted reports are reviewed before appearing here.</p>
+            </div>
+        </section>
+        <section class="container section-padding">
+            <div class="tracker-table-wrapper reveal">
+                <table class="tracker-table">
+                    <thead>
+                        <tr>
+                            <th>Case ID</th>
+                            <th>Location</th>
+                            <th>Category</th>
+                            <th>Description</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="render-target-rows">
+                        <tr class="row-enter">
+                            <td>#001</td>
+                            <td><a href="case-001.html" class="link-red">Kajiado (Ngong/Matasia)</a></td>
+                            <td>Infrastructure</td>
+                            <td>Open Drainage &amp; Health Crisis</td>
+                            <td><span class="status-pill status-pending">🔴 Pending Action</span></td>
+                        </tr>
+                        <tr class="row-enter">
+                            <td>#002</td>
+                            <td><a href="case-002.html" class="link-red">National Level</a></td>
+                            <td>Policy Watch</td>
+                            <td>Digital Rights (AI Bill 2026)</td>
+                            <td><span class="status-pill status-scrutiny">🟡 Under Scrutiny</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+    <div id="inject-global-footer"></div>
+    <script src="js/router.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+</html>

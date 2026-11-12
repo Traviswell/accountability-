@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Report a Failure | Accountability to the Core</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="inject-global-header"></div>
+    <main class="flex-grow-content container">
+        <div class="form-box reveal">
+            <div class="form-header">
+                <h2>Citizen Reporting Portal</h2>
+                <p>File an evidence-backed report. All submissions enter an admin queue for verification before appearing on the public tracker.</p>
+            </div>
+            <div class="form-success" id="reportSuccess">Your report was submitted. It will appear on the tracker once verified by the admin team.</div>
+            <div class="form-error" id="reportError"></div>
+            <form id="complaintForm">
+                <div class="field-group">
+                    <label>Target Location / Ward</label>
+                    <input type="text" id="fieldLocation" required class="input-element" placeholder="e.g. Olkeri Ward, Ngong">
+                </div>
+                <div class="field-group">
+                    <label>Audit Category</label>
+                    <select id="fieldCategory" class="input-element">
+                        <option>Public Health &amp; Drainage Infrastructure</option>
+                        <option>Roadway &amp; Asset Maintenance</option>
+                        <option>Police Conduct</option>
+                        <option>Corruption &amp; Misuse of Public Funds</option>
+                        <option>Policy &amp; Legislation</option>
+                        <option>Other</option>
+                    </select>
+                </div>
+                <div class="field-group">
+                    <label>Evidence &amp; Description</label>
+                    <textarea id="fieldDetails" rows="6" required class="input-element" placeholder="Describe what you observed with as much detail as possible..."></textarea>
+                </div>
+                <button type="submit" class="btn-report btn-block">Submit Report</button>
+            </form>
+        </div>
+    </main>
+    <div id="inject-global-footer"></div>
+    <script src="js/router.js"></script>
+    <script src="js/storage.js"></script>
+</body>
+</html>

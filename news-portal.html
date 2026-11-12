@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NewsKing | AI Civic Media Portal</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="inject-global-header"></div>
+    <main class="flex-grow-content">
+        <section class="topic-header-banner">
+            <div class="container">
+                <p class="eyebrow reveal">Powered by Claude AI</p>
+                <h2 class="reveal">NewsKing — Civic Media Intelligence</h2>
+                <p class="reveal">Curated Kenyan governance news from credible sources, plus an AI lie detector you can use to fact-check any claim in real time.</p>
+            </div>
+        </section>
+
+        <section class="container section-padding">
+            <div class="fact-detector-box reveal">
+                <h3 class="detector-title">AI Lie Detector</h3>
+                <p class="detector-desc">Enter any claim about Kenyan governance, police conduct, public debt, or corruption. The AI will cross-reference credible sources and return a verdict with confidence score.</p>
+                <div class="detector-claim-examples" id="exampleClaims"></div>
+                <div class="detector-input-wrap">
+                    <input type="text" id="claimInput" class="input-element input-dark" placeholder="e.g. Kenya police killed over 100 people in the 2025 protests...">
+                    <button id="runFactCheckBtn" class="btn-report btn-lg">Analyse Claim</button>
+                </div>
+                <div id="detectorOutput"></div>
+            </div>
+
+            <div class="section-head">
+                <p class="eyebrow reveal">Sourced from Credible Outlets</p>
+                <h2 class="reveal">Today's Civic Headlines</h2>
+                <p class="reveal">Stories tracked from IPOA, National Treasury, EACC, TI Kenya, Daily Nation, Standard, Business Daily, and The Star.</p>
+            </div>
+
+            <div class="split-news-grid">
+                <div class="news-column-card column-a reveal">
+                    <h3 class="news-col-title news-col-title-a">Government &amp; Policy</h3>
+                    <span class="news-col-subtitle">Finance, legislation, accountability</span>
+                    <div class="news-feed-list" id="leftNewsLogs">
+                        <div class="skeleton-line"></div>
+                        <div class="skeleton-line medium"></div>
+                        <div class="skeleton-line short"></div>
+                    </div>
+                </div>
+                <div class="news-column-card column-b reveal">
+                    <h3 class="news-col-title news-col-title-b">Citizen &amp; Oversight</h3>
+                    <span class="news-col-subtitle">Police, protests, debt, corruption</span>
+                    <div class="news-feed-list" id="rightNewsLogs">
+                        <div class="skeleton-line"></div>
+                        <div class="skeleton-line medium"></div>
+                        <div class="skeleton-line short"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <div id="inject-global-footer"></div>
+    <script src="js/router.js"></script>
+    <script src="js/news-portal.js"></script>
+</body>
+</html>

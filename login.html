@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In | Accountability to the Core</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="inject-global-header"></div>
+    <main class="flex-grow-content container">
+        <div class="form-box form-box-sm reveal">
+            <div class="form-header">
+                <h2>Admin Login</h2>
+                <p>For citizen accounts, use the <a href="user-login.html" class="link-red">Sign In page</a>.</p>
+            </div>
+            <form id="loginForm">
+                <div class="field-group">
+                    <label>Security ID</label>
+                    <input type="text" required class="input-element" autocomplete="username">
+                </div>
+                <div class="field-group">
+                    <label>Passkey</label>
+                    <input type="password" required class="input-element" autocomplete="current-password">
+                </div>
+                <button type="submit" class="btn-report btn-block">Authorize Access</button>
+            </form>
+        </div>
+    </main>
+    <div id="inject-global-footer"></div>
+    <script src="js/router.js"></script>
+    <script src="js/login.js"></script>
+</body>
+</html>

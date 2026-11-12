@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Dashboard | Accountability to the Core</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="inject-global-header"></div>
+
+    <div class="user-topbar">
+        <span class="user-topbar-greeting" id="topbarGreeting">Welcome back</span>
+        <button id="logoutBtn" class="btn-report btn-secondary btn-sm">Sign Out</button>
+    </div>
+
+    <main class="container flex-grow-content">
+        <div class="dashboard-wrap">
+            <aside class="dashboard-sidebar">
+                <div class="sidebar-avatar" id="sidebarAvatar">T</div>
+                <div class="sidebar-name" id="sidebarName">Loading...</div>
+                <div class="sidebar-email" id="sidebarEmail"></div>
+                <div class="sidebar-badge">🌍 Citizen Reporter</div>
+
+                <nav class="sidebar-nav">
+                    <button class="sidebar-link active" data-panel="panelOverview">
+                        <span class="link-icon">📊</span> Overview
+                    </button>
+                    <button class="sidebar-link" data-panel="panelReports">
+                        <span class="link-icon">📋</span> My Reports
+                    </button>
+                    <button class="sidebar-link" data-panel="panelNewReport">
+                        <span class="link-icon">➕</span> File a Report
+                    </button>
+                    <button class="sidebar-link" data-panel="panelActivity">
+                        <span class="link-icon">🔔</span> Platform Activity
+                    </button>
+                    <button id="logoutBtn2" class="sidebar-link" data-panel="">
+                        <span class="link-icon">🚪</span> Sign Out
+                    </button>
+                </nav>
+            </aside>
+
+            <div class="dashboard-main">
+                <div class="dash-panel active" id="panelOverview">
+                    <h2 class="dash-panel-title">Overview</h2>
+                    <div class="dash-stats-row">
+                        <div class="dash-stat-card">
+                            <span class="dash-stat-number" id="statReports">0</span>
+                            <span class="dash-stat-label">Reports Filed</span>
+                        </div>
+                        <div class="dash-stat-card">
+                            <span class="dash-stat-number">3</span>
+                            <span class="dash-stat-label">Active Cases</span>
+                        </div>
+                        <div class="dash-stat-card">
+                            <span class="dash-stat-number" id="statJoined">—</span>
+                            <span class="dash-stat-label">Joined</span>
+                        </div>
+                    </div>
+                    <div class="section-head" class="section-head-left">
+                        <h3 >Quick Actions</h3>
+                    </div>
+                    <div class="hero-actions" class="actions-left">
+                        <a href="report.html" class="btn-report">File a Report</a>
+                        <a href="dashboard.html" class="btn-report btn-dark">View Live Tracker</a>
+                        <a href="news-portal.html" class="btn-report btn-blue">NewsKing</a>
+                    </div>
+                </div>
+
+                <div class="dash-panel" id="panelReports">
+                    <h2 class="dash-panel-title">My Reports</h2>
+                    <div class="user-reports-list" id="userReportsList">
+                        <div class="empty-state">
+                            <span class="empty-icon">📭</span>
+                            <p class="empty-title">Loading reports...</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dash-panel" id="panelNewReport">
+                    <h2 class="dash-panel-title">File a Report</h2>
+                    <div class="form-error" id="dashReportError"></div>
+                    <div class="form-success" id="dashReportSuccess">Report submitted successfully. It will appear in the admin queue for verification.</div>
+                    <form id="dashReportForm">
+                        <div class="field-group">
+                            <label>Location / Ward</label>
+                            <input type="text" id="dashLocation" class="input-element" placeholder="e.g. Olkeri Ward, Ngong" required>
+                        </div>
+                        <div class="field-group">
+                            <label>Category</label>
+                            <select id="dashCategory" class="input-element">
+                                <option>Public Health &amp; Drainage</option>
+                                <option>Road &amp; Infrastructure</option>
+                                <option>Police Conduct</option>
+                                <option>Corruption &amp; Misuse of Funds</option>
+                                <option>Policy &amp; Legislation</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
+                        <div class="field-group">
+                            <label>Description of Failure</label>
+                            <textarea id="dashDetails" class="input-element" rows="5" placeholder="Describe what you observed. Be specific." required></textarea>
+                        </div>
+                        <button type="submit" class="btn-report btn-block">Submit Report</button>
+                    </form>
+                </div>
+
+                <div class="dash-panel" id="panelActivity">
+                    <h2 class="dash-panel-title">Platform Activity</h2>
+                    <div class="tracker-table-wrapper">
+                        <table class="tracker-table">
+                            <thead><tr><th>Case</th><th>Category</th><th>Status</th></tr></thead>
+                            <tbody>
+                                <tr class="row-enter"><td><a href="case-001.html" class="link-red">#001 — Ngong Drainage</a></td><td>Infrastructure</td><td><span class="status-pill status-pending">🔴 Pending</span></td></tr>
+                                <tr class="row-enter"><td><a href="case-002.html" class="link-red">#002 — AI Bill 2026</a></td><td>Policy Watch</td><td><span class="status-pill status-scrutiny">🟡 Scrutiny</span></td></tr>
+                                <tr class="row-enter"><td><a href="police-brutality.html" class="link-red">Police Brutality Watch</a></td><td>Police Accountability</td><td><span class="status-pill status-pending">🔴 Open</span></td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div id="inject-global-footer"></div>
+    <script src="js/router.js"></script>
+    <script src="js/user-dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Console | Accountability to the Core</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="inject-global-header"></div>
+    <main class="flex-grow-content">
+        <section class="topic-header-banner">
+            <div class="container">
+                <p class="eyebrow reveal">Restricted Access</p>
+                <h2 class="reveal">Admin Verification Console</h2>
+                <p class="reveal">Review citizen-submitted reports, publish verified cases to the live tracker, or dismiss invalid submissions.</p>
+            </div>
+        </section>
+        <section class="container section-padding">
+            <div class="tracker-table-wrapper reveal">
+                <table class="tracker-table">
+                    <thead>
+                        <tr><th>Report ID</th><th>Details</th><th>Actions</th></tr>
+                    </thead>
+                    <tbody id="admin-processing-node"></tbody>
+                </table>
+            </div>
+            <div class="hero-actions" class="mt-24">
+                <button id="flushQueueBtn" class="btn-report btn-secondary">Flush All Queue Data</button>
+            </div>
+        </section>
+    </main>
+    <div id="inject-global-footer"></div>
+    <script src="js/router.js"></script>
+    <script src="js/admin.js"></script>
+</body>
+</html>
